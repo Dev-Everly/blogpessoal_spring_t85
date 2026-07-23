@@ -38,11 +38,22 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
 	
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	private Usuario usuario;
+	
 	@UpdateTimestamp // Atualiza automaticamente a data e hora sempre que o registro for atualizado
 	private LocalDateTime data;
 	
 	
 	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	public Tema getTema() {
 		return tema;
 	}
